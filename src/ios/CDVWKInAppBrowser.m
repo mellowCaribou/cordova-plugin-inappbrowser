@@ -1081,16 +1081,16 @@ BOOL isExiting = FALSE;
 {
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
     
-    if (_userAgentLockToken != 0) {
+    //if (_userAgentLockToken != 0) {
         [self.webView loadRequest:request];
-    } else {
-        __weak CDVWKInAppBrowserViewController* weakSelf = self;
-        [CDVUserAgentUtil acquireLock:^(NSInteger lockToken) {
-            _userAgentLockToken = lockToken;
-            [CDVUserAgentUtil setUserAgent:_userAgent lockToken:lockToken];
-            [weakSelf.webView loadRequest:request];
-        }];
-    }
+    //} else {
+    //   __weak CDVWKInAppBrowserViewController* weakSelf = self;
+    //    [CDVUserAgentUtil acquireLock:^(NSInteger lockToken) {
+    //        _userAgentLockToken = lockToken;
+    //        [CDVUserAgentUtil setUserAgent:_userAgent lockToken:lockToken];
+    //        [weakSelf.webView loadRequest:request];
+    //    }];
+    //}
 }
 
 - (void)goBack:(id)sender
